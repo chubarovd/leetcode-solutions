@@ -1,5 +1,5 @@
 class Solution(object):
-    def twoSum(self, nums, target):
+    def best_twoSum(self, nums, target):
         """
         :type nums: List[int]
         :type target: int
@@ -14,4 +14,4 @@ class Solution(object):
 
 
 sln = Solution()
-print(sln.twoSum([1, 1, 1, 7, 7, 2, 7, 11, 15, 2], 9))
+print(sln.best_twoSum([1, 1, 1, 7, 7, 2, 7, 11, 15, 2], 9))
