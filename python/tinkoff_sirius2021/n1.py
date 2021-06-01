@@ -1,0 +1,5 @@
+n = int(input())
+k = int(input())
+
+print(k * n // 9)
+print((k * n % 9) * 6)
