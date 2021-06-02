@@ -12,34 +12,36 @@ dct = {
 class Solution:
     def my_romanToInt(self, s: str) -> int:
         numb = 0
-        c_prev = ''
-        for c in reversed(s):
-            if c == 'I':
-                if c_prev == 'V' or c_prev == 'X':
+        for i in range(len(s)):
+            if s[i] == 'I':
+                if s[i + 1] == 'V' or s[i + 1] == 'X':
                     numb -= 1
+                    i += 1
                 else:
                     numb += 1
-            elif c == 'V':
+            elif s[i] == 'V':
                 numb += 5
-            elif c == 'X':
-                if c_prev == 'L' or c_prev == 'C':
+            elif s[i] == 'X':
+                if s[i + 1] == 'L' or s[i + 1] == 'C':
                     numb -= 10
+                    i += 1
                 else:
                     numb += 10
-            elif c == 'L':
+            elif s[i] == 'L':
                 numb += 50
-            elif c == 'C':
-                if c_prev == 'D' or c_prev == 'M':
+            elif s[i] == 'C':
+                if s[i + 1] == 'D' or s[i + 1] == 'M':
                     numb -= 100
+                    i += 1
                 else:
                     numb += 100
-            elif c == 'D':
+            elif s[i] == 'D':
                 numb += 500
+                i += 1
             else:
                 numb += 1000
-            c_prev = c
         return numb
 
 
 sln = Solution()
-print(sln.romanToInt('MCMXCIV'))
+print(sln.my_romanToInt('IX'))
